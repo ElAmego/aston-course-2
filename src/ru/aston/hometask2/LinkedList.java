@@ -1,4 +1,4 @@
-package dz2;
+package ru.aston.hometask2;
 
 import java.util.Collection;
 import java.util.NoSuchElementException;

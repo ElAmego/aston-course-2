@@ -1,4 +1,4 @@
-package dz3;
+package ru.aston.hometask3;
 
 import java.util.List;
 

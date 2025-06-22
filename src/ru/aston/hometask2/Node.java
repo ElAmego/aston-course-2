@@ -1,4 +1,4 @@
-package dz2;
+package ru.aston.hometask2;
 
 final public class Node<T> {
     public Node<T> prevNode;

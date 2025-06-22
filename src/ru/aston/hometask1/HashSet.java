@@ -1,4 +1,4 @@
-package dz1;
+package ru.aston.hometask1;
 
 import java.util.LinkedList;
 

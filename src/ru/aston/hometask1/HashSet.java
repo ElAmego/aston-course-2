@@ -2,14 +2,6 @@ package ru.aston.hometask1;
 
 import java.util.LinkedList;
 
-/**
- * Метод add(E value) – добавление элемента во множество.
- * Метод remove(E value) – удаление элемента.
- * Метод contains(E value) – возвращает true или false в зависимости есть ли элемент или нет.
- * Метод size() – возвращает размер множества.
- * Метод toString() – возвращает строковое представление множества.
- */
-
 final public class HashSet<E> {
     private static final int DEFAULT_CAPACITY = 10;
     private static final float LOAD_FACTOR = 0.75f;

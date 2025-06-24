@@ -1,12 +1,13 @@
 package ru.aston.hometask1;
 
 import java.util.LinkedList;
+import java.util.List;
 
 final public class HashSet<E> {
     private static final int DEFAULT_CAPACITY = 10;
     private static final float LOAD_FACTOR = 0.75f;
 
-    private LinkedList<E>[] buckets;
+    private List<E>[] buckets;
     private int size;
 
     public HashSet() {
@@ -31,7 +32,7 @@ final public class HashSet<E> {
 
     public void remove(final E element) {
         final int bucketIndex = getBucketIndex(element);
-        final LinkedList<E> bucket = buckets[bucketIndex];
+        final List<E> bucket = buckets[bucketIndex];
 
         for (E e : bucket) {
             if (e.equals(element)) {
@@ -43,7 +44,7 @@ final public class HashSet<E> {
 
     public boolean contains(final E element) {
         final int bucketIndex = getBucketIndex(element);
-        final LinkedList<E> bucket = buckets[bucketIndex];
+        final List<E> bucket = buckets[bucketIndex];
 
         for (E e : bucket) {
             if (e.equals(element)) {
@@ -67,7 +68,7 @@ final public class HashSet<E> {
     }
 
     private void resize() {
-        final LinkedList<E>[] oldBuckets = buckets;
+        final List<E>[] oldBuckets = buckets;
         buckets = new LinkedList[oldBuckets.length * 2];
 
         for (int i = 0; i < buckets.length; i++) {
@@ -75,7 +76,7 @@ final public class HashSet<E> {
         }
 
         size = 0;
-        for (LinkedList<E> bucket : oldBuckets) {
+        for (List<E> bucket : oldBuckets) {
             for (E element : bucket) {
                 add(element);
             }
@@ -94,7 +95,7 @@ final public class HashSet<E> {
     public int hashCode() {
         int result = 0;
 
-        for (LinkedList<E> bucket : buckets) {
+        for (List<E> bucket : buckets) {
             for (E element : bucket) {
                 result += element != null ? element.hashCode() : 0;
             }
@@ -107,7 +108,7 @@ final public class HashSet<E> {
     public String toString() {
         String result = "";
 
-        for (LinkedList<E> bucket : buckets) {
+        for (List<E> bucket : buckets) {
             for (E element : bucket) {
                 result += element + " ";
             }

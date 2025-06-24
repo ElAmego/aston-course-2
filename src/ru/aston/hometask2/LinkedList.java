@@ -3,18 +3,6 @@ package ru.aston.hometask2;
 import java.util.Collection;
 import java.util.NoSuchElementException;
 
-/**
- * Метод add(E value) – добавление в конец списка.
- * Метод add(int index, T value) – добавление по индексу.
- * Метод toString() – возвращает строковое представление списка..
- * Метод size() – возвращает размер списка.
- * Метод get(int index) – возвращает значение по индексу.
- * Метод remove() – удаляет последние элемент.
- * Метод remove(int index) – удаляет значение по индексу.
- * Метод addAll(Collection) – добавляет элементы из списка в LinkedList.
- * Метод addAll(int index, Collection) – добавляет элементы из списка в LinkedList начиная с указанного индекса.
- */
-
 final public class LinkedList<T> {
     private Node<T> head;
     private Node<T> tail;
@@ -37,7 +25,7 @@ final public class LinkedList<T> {
 
     public void add(final int index, final T value) {
         if (index > size || index < 0) {
-            indexOutOfBoundsException(index);
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
 
         final Node<T> node = new Node<>(value);
@@ -68,7 +56,7 @@ final public class LinkedList<T> {
     }
 
     public T get(final int index) {
-        if (index >= size || index < 0) indexOutOfBoundsException(index);
+        if (index >= size || index < 0) throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
 
         final Node<T> currentNode = getNecessaryNode(index);
 
@@ -135,10 +123,6 @@ final public class LinkedList<T> {
         for (T item: collection) {
             add(index++, item);
         }
-    }
-
-    private void indexOutOfBoundsException(final int index) {
-        throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
     }
 
     private Node<T> getNecessaryNode(final int index) {

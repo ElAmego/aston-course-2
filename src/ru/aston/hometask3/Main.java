@@ -7,19 +7,49 @@ public class Main {
     public static void main(String[] args) {
         List<Student> students = List.of(
                 new Student("Генадий", List.of(
-                        new Book("Толстой", "Война и мир", 200, 2001),
-                        new Book("Джойс", "Улисс", 150, 1900),
-                        new Book("Фолкнер", "Звук и ярость", 10, 2000),
-                        new Book("Вулф", "На маяк", 55, 1765),
-                        new Book("Ачебе", "Распад", 100, 1800)
+                        new Book.Builder("Толстой", "Война и мир")
+                                .setPages(200)
+                                .setYear(2001)
+                                .build(),
+                        new Book.Builder("Джойс", "Улисс")
+                                .setPages(150)
+                                .setYear(1900)
+                                .build(),
+                        new Book.Builder("Фолкнер", "Звук и ярость")
+                                .setPages(10)
+                                .setYear(2000)
+                                .build(),
+                        new Book.Builder("Вулф", "На маяк")
+                                .setPages(55)
+                                .setYear(1765)
+                                .build(),
+                        new Book.Builder("Ачебе", "Распад")
+                                .setPages(100)
+                                .setYear(1800)
+                                .build()
                 )),
 
                 new Student("Александр", List.of(
-                        new Book("Митчелл", "Унесенные ветром", 90, 2005),
-                        new Book("Рушди", "Дети полуночи", 222, 1650),
-                        new Book("Геродот", "История", 60, 1500),
-                        new Book("Гоббс", "Левиафан", 80, 2015),
-                        new Book("Милн", "Винни-Пух", 100, 1999)
+                        new Book.Builder("Митчелл", "Унесенные ветром")
+                                .setPages(90)
+                                .setYear(2005)
+                                .build(),
+                        new Book.Builder("Рушди", "Дети полуночи")
+                                .setPages(222)
+                                .setYear(1650)
+                                .build(),
+                        new Book.Builder("Геродот", "История")
+                                .setPages(60)
+                                .setYear(1500)
+                                .build(),
+                        new Book.Builder("Гоббс", "Левиафан")
+                                .setPages(80)
+                                .setYear(2015)
+                                .build(),
+                        new Book.Builder("Милн", "Винни-Пух")
+                                .setPages(100)
+                                .setYear(1999)
+                                .build()
                 ))
         );
 
